@@ -1,0 +1,99 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{a4wide}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage{amsfonts}
+\usepackage{epsfig,graphics,graphicx,graphpap,color}
+\usepackage{slashed,xspace,setspace}
+\usepackage{caption}
+\usepackage{fullpage}
+%\usepackage[top=0.8in,right=0.8in,left=0.8in,bottom=1in]{geometry}
+\usepackage[top=0.83in]{geometry}
+\usepackage{ptdr-definitions}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{rotate}
+\usepackage[sort&compress]{natbib}
+\usepackage{german}
+\begin{document}
+
+\def\gluino{\mbox{$\tilde g$}\xspace}
+\def\mgluino{\mbox{$m_{\tilde g}$}\xspace}
+\def\mStop{\mbox{$m_{\tilde t}$}\xspace}
+\def\mSbottom{\mbox{$m_{\tilde b}$}\xspace}
+\def\mCha{\mbox{$m_{\tilde{\chi}^{\pm}_1}$}\xspace}
+\def\mNeu{\mbox{$m_{\tilde{\chi}^{0}_1}$}\xspace}
+%\def\eslash{\ensuremath{{\hbox{$E$\kern-0.6em\lower-.05ex\hbox{/}\kern0.10em}}}}
+%\def\vecmet{\mbox{$\vec{\eslash}_T$}\xspace} %missing ET vector                  
+%\def\vecet{\mbox{$\vec{E}_T$}\xspace} % ET vector                                
+%\def\mey{\mbox{$\eslash_y$}\xspace} %missing Ey                                  
+\def\nbtags{\mbox{$n_{\cPqb\textrm{-tag}}$}\xspace}
+\def\njets{\mbox{$n_{\textrm{jets}}$}\xspace}
+\def\mT{\mbox{$m_{\textrm{T}}$}\xspace}
+\newcommand{\jptratio}[2]{\mbox{$p_{\textrm{T\,\vline\,#1,#2}}^{\textrm{ratio}}$}\xspace}
+\newcommand{\ptb}[1]{\mbox{$p_{\textrm{T}}^{}(b_#1)$}\xspace}
+\def\mTW{\mbox{$m_{\textrm{T}2}^W$}\xspace}
+\def\HT{\mbox{$H_{\textrm{T}}$}\xspace}
+\def\HTratio{\mbox{$H_{\textrm{T}}^{\textrm{ratio}}$}\xspace}
+\def\dphi{\mbox{$\Delta\phi(W,l)$}\xspace}
+\def\dphimet{\mbox{$\Delta\phi(\ETmiss,j_{1,2})$}\xspace}
+\def\ttjets{\mbox{\ensuremath{\cmsSymbolFace{t}\overline{\cmsSymbolFace{t}}}+jets}\xspace}
+\def\wjets{\mbox{\ensuremath{W}+jets}\xspace}
+\newcommand{\fixme}[1]{\textcolor{red}{FIXME: #1}} % \marginpar{Test}
+\newcommand{\tobechecked}[1]{\textcolor{red}{#1}\marginpar{\textcolor{red}{\textbf{X}}}}
+\newcommand{\boldStart}[1]{\noindent{\bf{#1}}}
+\onehalfspacing
+\addtolength{\leftmargin}{-2in}
+\thispagestyle{empty}
+
+\section*{Kurzfassung}
+
+%During the 2011/2012 LHC run the CMS and ATLAS experiments each recorded 25~fb$^{-1}$ at 7 and 8 \TeV and discovered a new boson in this dataset, most probably a scalar particle. 
+%Measurements of the decay branchings are compatible with the predictions for the Higgs boson of the Standard Model (SM).
+W\"ahrend der Jahre 2011/2012 haben die beiden LHC Experimente CMS und ATLAS Proton-Proton Kollisionen entsprechend einer integrierten Luminosit\"at von jeweils 25~fb$^{-1}$ bei  Schwerpunktsenergien von 7 und 8 \TeV aufgezeichnet.
+In diesen wurde ein neues Boson entdeckt, h\"ochstwahrscheinlich ein skalares Teilchen. Eine Messung der Zerfallsraten und Verzweigungsverh\"altnisse  war kompatibel mit den Vorhersagen f\"ur das Higgs Boson im Standard Modell (SM).
+
+%Another salient feature of the data is the absence of any supersymmetric (SUSY) signature, resulting in lower limits for the masses of many strongly-interacting SUSY particles of the order of 1 \TeV. % for many strongly-interacting SUSY masses.
+%Can SUSY still provide the stabilization of the quantum corrections to the Higgs boson mass according to the long advertized scheme,  where fermionic and bosonic loops cancel? 
+%And is the discovered scalar particle not the SM Higgs boson, but in fact, the lightest SUSY Higgs particle?
+Ein weiteres herausragendes Merkmal dieser Daten war das Fehlen von Hinweisen auf Supersymmetrie (SUSY), was zu Schranken f\"ur die Massen stark wechselwirkender supersymmetrischer Teilchen von etwa 1 \TeV gef\"uhrt hat.
+Kann SUSY die Masse des Higgs Bosons durch den seit langem vermuteten Mechanismus stabilisieren, dass sich fermionische und bosonische Schleifenbeitr\"age in den Quantenkorrekturen aufheben?
+Und ist das neue Boson vielleicht nicht das SM Higgs Boson, sondern das leichteste SUSY Higgs Teilchen?
+%Zur Zeit sind diese Fragen noch offen und stellen eine der wichtigsten Herausforderungen f\"ur die n\"achste Periode der Datennahme am LHC dar, welche 2015 bei einer Schwerpunktsenergie von 13-14~\TeV starten wird.
+Die bisherigen LHC Ergebnisse haben die M\"oglichkeit von ``nat\"urlicher'' SUSY offen gelassen, ein Modell, welches die Idee subsumiert,
+dass diese neue Symmetrie der Natur die Quantenkorrekturen zur Masse des Higgs Bosons begrenzt. Daher ist nat\"urliche SUSY eine Priorit\"at f\"ur die experimentellen Kollaborationen und ein 
+Eckpfeiler f\"ur SUSY als Theorie der fundamentalen Wechselwirkung. 
+
+Eine zentrale Vorhersage nat\"urlicher Supersymmetrie ist die Existenz von Gluinos, neuer Teilchen mit Massen, die ab 2015 bei den Schwerpunktsenergien von 13 - 14 \TeV der neuen LHC Betriebsperiode zug\"anglich werden.
+%Our aim is to use CMS data to search for gluinos, new particles predicted by natural SUSY and with masses in the reach of the next LHC run.
+%The analysis focusses on events involving up to four top quarks but is sensitive to a wide range of natural SUSY final states.
+%, in event topologies with exactly one muon or electron. 
+%The single-lepton search channel, requiring exactly one muon or electron,  retains a large efficiency for signal events in combination with high suppression of backgrounds from multijet production, filing it among the most sensitive discovery channels.
+%, which turns it into the most sensitive discovery channel.
+Es ist unser Ziel, in CMS Daten nach Gluinos zu suchen, und zwar in Ereignissen mit einem Myon oder Elektron.
+Dieser Suchkanal unterdr\"uckt  die rein hadronischen Hintergrundprozesse fast vollst\"andig, w\"ahrend er f\"ur Signalereignisse effizient bleibt.
+Das macht ihn zu einem der sensitivsten Kan\"ale.
+Die Suche ist auf Ereignisse mit bis zu vier Top-Quarks ausgelegt, ist aber sensitiv f\"ur viele Endzust\"ande der nat\"urlichen SUSY.
+
+
+Vom technischen Standpunkt aus werden wir eine neue multivariate Analysemethode (MVA) entwickeln, welche eine signifikant erh\"ohte Sensitivit\"at  
+vor allem bei solchen SUSY Massenkonfigurationen aufweist, f\"ur die einzelne Observable, wie die Energien der Jets und des Leptons, der Fehlbetrag in der transversalen Impulsbilanz (\ETmiss), und andere, f\"ur sich genommen nicht ausreichen, um das Signal zu identifizieren.
+Eine solche Strategie wurde bisher nicht in Suchen nach Gluinos verwendet, und wir k\"onnen damit bereits mit 4 fb$^{-1}$ in unbekanntes SUSY Parametergebiet  vorsto"sen. 
+Mit einem Datensatz von 20~fb$^{-1}$, der wahrscheinlich schon w\"ahrend des ersten Jahres gewonnen werden wird, sind wir f\"ur fast alle Massenkonfigurationen der nat\"urlichen SUSY sensitiv.
+Die Resultate dieser Methode werden SUSY entweder einer ihrer Hauptmotivationen berauben, oder aber als neues grundlegendes Konzept in die~Beschreibung~der~Natur~einf\"uhren. % , oder aber einer ihrer Hauptmotivationen beraubt werden. %, oder aber als neues grundlegendes Konzept in Beschreibung der Natur eingef\"uhrt.
+
+%Combining the MVA strategy with improved reconstruction methods for missing transverse energy and leptons, 
+%which incorporate the experience gained during three years of data taking, maximizes the discovery potential and distinguishes this proposal from other ongoing projects.
+
+Die Kombination der MVA Strategie mit neuartigen Rekonstruktionsalgorithmen f\"ur Leptonen, \ETmiss und weitere Observablen, welche
+die Erfahrungen der vergangenen dreij\"ahrigen Laufzeit b\"undeln, optimiert das Entdeckungspotential der Analyse und ist ein Alleinstellungsmerkmal dieses Projekts.
+
+% distinguishes this proposal from other ongoing projects. 
+%It maximizes the CMS discovery potential, particularly for the challenging future beam conditions. 
+
+%The applicants SUSY group has conducted searches for gluinos in the 7 and 8 \TeV CMS datasets 
+%resulting in the most stringent CMS limits to date on the production of gluinos.  
+%We request funding for a Ph.D. student who will work in our group.
+
+
+\end{document}

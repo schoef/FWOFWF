@@ -1,0 +1,99 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{a4wide}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage{amsfonts}
+\usepackage{epsfig,graphics,graphicx,graphpap,color}
+\usepackage{slashed,xspace,setspace}
+\usepackage{caption}
+\usepackage{fullpage}
+%\usepackage[top=0.8in,right=0.8in,left=0.8in,bottom=1in]{geometry}
+\usepackage[top=0.83in]{geometry}
+\usepackage{ptdr-definitions}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{rotate}
+\usepackage[sort&compress]{natbib}
+\begin{document}
+
+\def\gluino{\mbox{$\tilde g$}\xspace}
+\def\mgluino{\mbox{$m_{\tilde g}$}\xspace}
+\def\mStop{\mbox{$m_{\tilde t}$}\xspace}
+\def\mSbottom{\mbox{$m_{\tilde b}$}\xspace}
+\def\mCha{\mbox{$m_{\tilde{\chi}^{\pm}_1}$}\xspace}
+\def\mNeu{\mbox{$m_{\tilde{\chi}^{0}_1}$}\xspace}
+%\def\eslash{\ensuremath{{\hbox{$E$\kern-0.6em\lower-.05ex\hbox{/}\kern0.10em}}}}
+%\def\vecmet{\mbox{$\vec{\eslash}_T$}\xspace} %missing ET vector                  
+%\def\vecet{\mbox{$\vec{E}_T$}\xspace} % ET vector                                
+%\def\mey{\mbox{$\eslash_y$}\xspace} %missing Ey                                  
+\def\nbtags{\mbox{$n_{\cPqb\textrm{-tag}}$}\xspace}
+\def\njets{\mbox{$n_{\textrm{jets}}$}\xspace}
+\def\mT{\mbox{$m_{\textrm{T}}$}\xspace}
+\newcommand{\jptratio}[2]{\mbox{$p_{\textrm{T\,\vline\,#1,#2}}^{\textrm{ratio}}$}\xspace}
+\newcommand{\ptb}[1]{\mbox{$p_{\textrm{T}}^{}(b_#1)$}\xspace}
+\def\mTW{\mbox{$m_{\textrm{T}2}^W$}\xspace}
+\def\HT{\mbox{$H_{\textrm{T}}$}\xspace}
+\def\HTratio{\mbox{$H_{\textrm{T}}^{\textrm{ratio}}$}\xspace}
+\def\dphi{\mbox{$\Delta\phi(W,l)$}\xspace}
+\def\dphimet{\mbox{$\Delta\phi(\ETmiss,j_{1,2})$}\xspace}
+\def\ttjets{\mbox{\ensuremath{\cmsSymbolFace{t}\overline{\cmsSymbolFace{t}}}+jets}\xspace}
+\def\wjets{\mbox{\ensuremath{W}+jets}\xspace}
+\newcommand{\fixme}[1]{\textcolor{red}{FIXME: #1}} % \marginpar{Test}
+\newcommand{\tobechecked}[1]{\textcolor{red}{#1}\marginpar{\textcolor{red}{\textbf{X}}}}
+\newcommand{\boldStart}[1]{\noindent{\bf{#1}}}
+\onehalfspacing
+\addtolength{\leftmargin}{-2in}
+\thispagestyle{empty}
+
+\section*{Suche nach nat\"urlicher Supersymmetrie in 13 TeV Kollisionen mit dem CMS Detektor}
+%*) 450 words, or 3,000 chars,  1 page PR abstract  1) project title, 2) content of research project, 3) hypotheses, 4) methods, and 5) an explanation indicating what is new and/or special about the project. The
+%   language of the PR abstracts should be comprehensible to non-specialist audiences and contain as few technical/specialist terms as possible;
+
+%Since five years, particle physicists at the Large Hadron Collider at CERN analyze collisions of protons 
+%that are are collided at 99.9999968\% of the speed of light or, equivalently, at an energy of 8 \TeV.
+Seit f\"unf Jahren untersuchen Wissenschaftler am LHC Proton-Proton Kollisionen mit einer Schwerpunktsenergie von 8 \TeV oder 99.9999968\% der Lichtgeschwindigkeit.
+
+%In this high energetic reactions, a new particle was discovered that had properties just as predicted for the long sought Higgs boson. 
+%Measurements of decay properties confirmed this suspicion and the two major experimental collaborations, ATLAS and CMS, proudly announced the result on July 4${}^{\textrm{th.}}$, 2012.
+
+In diesen hochenergetischen Reaktionen wurde ein Teilchen entdeckt, das genau die Eigenschaften des lange gesuchten Higgs Bosons hat.
+Messungen der Zerfallswahrscheinlichkeiten best\"atigten den Verdacht und mit viel Stolz pr\"asentierten die beiden grossen Kollaborationen, ATLAS und CMS,
+des Ergebnis gemeinsam am 4. Juli 2012.
+
+%Theoretically, the Higgs boson is a challenge because of the special way it interacts with the other particles. 
+%This famous ``Higgs meachanism'' provides masses to the other fundamental particles, 
+%but when the relations are turned around, the Higgs boson itself receives large corrections to its mass from those particles. 
+%The net sum of these corrections needs to be 
+%stabilized according to widespread belief, or otherwise the Higgs boson would be almost infinitely heavy. 
+%Interestingly, the corrections go in different directions for force carrier particles, such as the photon, which is the particle of visible light, and matter particles, such
+%as the electron. If a property of nature ensured that there was the same number of particles for each of those species, then the corrections would cancel among themselves.
+%Supersymmetry, a theoretical framework invented in the 1970s, provides exactly this mechanism. 
+%It not only stabilizes the Higgs boson mass, it also predicts that there is a stable particle
+%that does hardly interact with other matter. 
+%Those particles would therefore fill the universe, interact only gravitationally and leave almost no trace otherwise. Is it a coincidence 
+%that our universe seems to contain 63\% so called dark matter that exactly fits that prescription? 
+%If this is a hint for supersymmetry, how can we uncover it in collision data? 
+In der Theorie ist das Higgs Boson ein heikles Teilchen aufgrund der Art seiner Wechselwirkung mit Materie.
+Der ber\"uhmte ``Higgs Mechanismus'' verleiht den Elementarteilchen ihre Masse. Bestimmt man aber die Masse des Higgs Bosons selbst,
+so zeigt sich, dass auch umgekehrt die Masse des Higgs Bosons von den anderen Teilchen beeinflusst ist. Diese Beitr\"age sind sehr gross und
+es wird angenommen, dass sie in unserer Naturbeschreibung stabilisert werden m\"ussen. Interessanterweise sind die Beitr\"age von Kraftteilchen (zB. dem Lichtteilchen, dem Photon)
+und den Materieteilchen (zB. dem Elektron) entgegengesetzt. G\"abe es nun eine Eigenschaft der Natur welche erzwingt, dass es gleich viele Teilchen beider Sorten gibt, dann
+w\"urden sich die Beitr\"age wegheben. Tats\"achlich erreicht Supersymmetie, ein hypothetischer Rahmen der in den 1970er Jahren geschaffen wurde, genau das. 
+Sie stabilisert nicht nur die Masse des Higgs Bosons sondern sagt auch ein schwach wechselwirkendes, aber stabiles Teilchen voraus. Solche Teilchen w\"urden
+das Universum durchdringen und gravitativ wechselwirken, sonst aber kaum in Erscheinung treten. Ist es ein Zufall, dass astronomische Messungen die ``Dunkle Materie'' mit 63\% veranschlagen,
+welche genau dieser Beschreibung entspricht? Und falls das ein Hinweis auf Supersymmetrie ist, wie entdecken wir sie an Beschleunigerexperimenten?
+
+%This proposal addresses these questions by analyzing LHC collision data taken by the CMS experiment until 2018. By then, enough data will have been accumulated to decide either way.
+%The proposal is a joint effort by the University of Ghent (UGent, Prof. D. Dobur) and the Institute for High Energy Physics in Austria (HEPHY, R. Sch\"ofbeck) who combine their strengths in analyzing
+%collisions were also electrons or muons, collectively called leptons, are created. 
+%Event samples with exactly one or two and more leptons of the same charge have very different properties. Therefore, different analysis strategies are required for the two cases.
+%Combining these channels, however, promises a tremendous gain in sensitivity. Therefore, we plan a joint analysis strategy comprising same-charge lepton pairs lead by UGent
+%and the single-lepton channel lead by HEPHY. In this way, we will either exclude or uncover this new fundamental property of nature within the next three years.
+Dieser Antrag versucht diese Fragen mit dem CMS Datensatz bis zum Jahr 2018 zu entscheiden. Der Antrag wird gemeinsam von der Universit\"at Gent (Prof. D. Dobur, UGent) und dem
+Institut f\"ur Hochenergiephysik (HEPHY, R.Sch\"ofbeck) der OeAW eingebracht. Kollisionsereignisse mit entweder genau einem Lepton (ein Elektron oder ein Myon) oder
+einem Leptonpaar derselben Ladung haben sehr unterschiedliche Eigenschaften. Deshalb sind komplement\"are Strategien bei der Hintergrundabsch\"atzung erforderlich.
+Kombiniert man die Kan\"ale aber, so zeigt sich eine starke Verbesserung der Sensitivit\"at. Daher planen wir eine gemeinsame Analyse welche die Kan\"ale mit einem
+Lepton (HEPHY) und mit einem Leptonpaar gleicher Ladung (UGent) zusammenf\"uhrt. Damit k\"onnen wir die Supersymmetrie als grundlegende Eigenschaft der Natur nun entweder entdecken oder 
+aber soweit einschr\"anken dass sie v\"ollig unplausibel wird.
+
+\end{document}

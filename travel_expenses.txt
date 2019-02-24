@@ -1,0 +1,21 @@
+##FIXME -> to be updated
+
+It is required that the participants of the project meet in order to discuss
+progress, analyse problems and carry out the tasks detailed in the work plan.
+Moreover, it is necessary that the participants travel to CERN during critical periods,
+typically when the analysis is at the collaborations approval stage 
+in the publication procedure.
+
+Ticket costs for return flight VIE-GVA-VIE, VIE-CRL-VIE and CRL-GVA-CRL each are approx. EUR 350.
+Room rates in Vienna and Ghent are approx. EUR 80/night, while
+the CERN Hostel charges approx. EUR 60/night.
+
+Therefore, a one-week trip to CERN (5 nights) from either Ghent or Vienna amounts to approx. EUR 650 and a one-week trip (5 nights) to Vienna (from Ghent) or to Ghent (from Vienna) amounts to EUR 750.
+
+We forsee the annual need for the following travels: 
+1) D. Dobur and L. Shchutska will each travel from Ghent to CERN three times, totalling to approx. EUR 3900. 
+2) D. Dobur and  L. Shchutska will each travel from Ghent to Vienna four times, totalling to approx. EUR 6000. 
+3) R. Schoefbeck and the Ph.D. student will each travel from Vienna to Ghent two times, totalling to approx. EUR 3000.
+4) The Ph.D. student will travel from Vienna to CERN four times, totalling approx. 2600.
+Travel expenses for R. Schoefbeck to go to CERN are covered by the HEPHY.
+In total, the annual travel expenses amount to approx. EUR 9900 for D. Dobur and L. Shchutska (UGent) and to approx. EUR 5600 for R. Schoefbeck and the Ph.D. student (Vienna).
