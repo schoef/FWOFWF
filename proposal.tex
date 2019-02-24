@@ -1,0 +1,590 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{a4wide}
+\usepackage{latexsym}
+\usepackage{amssymb,amsmath}
+\usepackage{amsfonts}
+\usepackage{epsfig,graphics,graphicx,graphpap,color}
+\usepackage{slashed,xspace,setspace}
+\usepackage{caption}
+\usepackage{sidecap}
+\usepackage{fullpage}
+\usepackage[top=0.83in,right=0.8in,left=0.8in,bottom=1in]{geometry}
+%\usepackage[top=0.83in]{geometry}
+\usepackage{ptdr-definitions}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{rotate}
+%\usepackage[sort&compress]{natbib}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\xdefinecolor{GR}{named}{OliveGreen}
+
+\begin{document}
+\def\gluino{\mbox{$\tilde g$}\xspace}
+\def\mgluino{\mbox{$m_{\tilde g}$}\xspace}
+\def\mStop{\mbox{$m_{\tilde t}$}\xspace}
+\def\mSbottom{\mbox{$m_{\tilde b}$}\xspace}
+\def\mCha{\mbox{$m_{\tilde{\chi}^{\pm}_1}$}\xspace}
+\def\mNeu{\mbox{$m_{\tilde{\chi}^{0}_1}$}\xspace}
+\def\nbtags{\mbox{$n_{\cPqb\textrm{-tag}}$}\xspace}
+\def\njets{\mbox{$n_{\textrm{jets}}$}\xspace}
+\def\mT{\mbox{$m_{\textrm{T}}$}\xspace}
+\newcommand{\jptratio}[2]{\mbox{$p_{\textrm{T\,\vline\,#1,#2}}^{\textrm{ratio}}$}\xspace}
+\newcommand{\ptb}[1]{\mbox{$p_{\textrm{T}}^{}(b_#1)$}\xspace}
+\def\mTW{\mbox{$m_{\textrm{T}2}^W$}\xspace}
+\def\HT{\mbox{$H_{\textrm{T}}$}\xspace}
+\def\HTratio{\mbox{$H_{\textrm{T}}^{\textrm{ratio}}$}\xspace}
+\def\dphi{\mbox{$\Delta\phi(W,l)$}\xspace}
+\def\dphimet{\mbox{$\Delta\phi(\ETmiss,j_{1,2})$}\xspace}
+\def\ttjets{\mbox{\ensuremath{\cmsSymbolFace{t}\overline{\cmsSymbolFace{t}}}+jets}\xspace}
+\def\wjets{\mbox{\ensuremath{W}+jets}\xspace}
+\newcommand{\fixme}[1]{\textcolor{red}{FIXME: #1}} % \marginpar{Test}
+\newcommand{\tobechecked}[1]{\textcolor{red}{#1}\marginpar{\textcolor{red}{\textbf{X}}}}
+\newcommand{\boldStart}[1]{\noindent{\bf{#1}}}
+\onehalfspacing
+\addtolength{\leftmargin}{-2in}
+
+\section{The state of the art }\label{sec:state-of-the-art}
+
+Our best understanding of nature at its most fundamental level is synthesized in the Standard Model (SM) of particle physics. 
+It is certainly amongst the most extensively tested scientific theories in history and was confirmed spectacularly in July 2012, 
+when the ATLAS and CMS collaborations jointly announced the discovery of a new particle consistent with the predicted SM Higgs boson~\cite{Chatrchyan:2012ufa}.
+
+%Yet, this theory appears to be incomplete when confronted with astronomical measurements of the matter content of the universe
+%because it cannot accomodate 73\% of the total, which we attribute to dark matter (DM).
+%Furthermore, the newly discovered scalar boson poses challenges too: the famous instability of the Higgs boson mass under quantum corrections is
+%known as the hierarchy problem.  
+%Supersymmetry (SUSY), a novel hypothesized property of nature, can solve both problems in a natural way by predicting supersymmetric partner particles
+%which stabilize the Higgs boson mass. 
+%Under moderate theoretical assumptions (e.g. $R$-parity conservation~\cite{Farrar:1978xj}), it also predicts that
+%the lightest supersymmetric particle (LSP) has all the properties of a DM candidate and therefore allows the reconciliation of 
+%particle physics with the universe at its largest scales.% in our description of nature. 
+%
+%In particular, the measured Higgs boson mass value of 125 \GeV is in line with SUSY, because it falls
+%short of the approximate maximum of 135 \GeV imposed by the Minimal Supersymmetric Standard Model (MSSM) \cite{Degrassi:2002fi}.
+%Is the scheme of SUSY, which controls the cancellation of fermionic and bosonic loops in the Higgs boson mass calculation, still feasible  
+%\cite{ref:hierarchy1,ref:hierarchy2}? 
+%And is the newly discovered Higgs boson, in fact, the lightest SUSY Higgs particle?
+%These are the key questions that motivate this research proposal.
+%
+%Currently, the Large Hadron Collider (LHC), because of its unprecedented collision energies, is the unique place to tackle these questions experimentally.
+%Recent LHC results lacked direct experimental evidence for SUSY signals and thereby severely constrained SUSY models like the cMSSM \cite{Chamseddine:1982jx, Arnowitt:1992aq, Kane:1993td}, 
+%but in turn focused the interest on models of ``natural'' 
+%SUSY~\cite{Barbieri:1987fn,Romanino:1999ut,Feng:1999mn}.
+%%,Kitano:2005wc,Giudice:2006sn,Barbieri:2009ev,Horton:2009ed}.
+%These latter models postulate that the masses of the superpartners of third generation quarks, top squark and bottom squark, are below $\sim$1~\TeV in order to 
+%explain the smallness of the Higgs boson mass, and that the gluon superpartner (the gluino)  is not much heavier than $1 - 2$ \TeV.
+%Current limits range up to 1.3~\TeV for the mass of the gluino and $\sim$700 \GeV for the mass of third generation squarks~\cite{Chatrchyan:2013iqa, Khachatryan:2014qwa}.
+%
+%The increase in collision energy to 13 \TeV after the restart of LHC operations in spring 2015, will finally allow to tackle the question of natural SUSY. 
+%Among the particles predicted to be accessible, the gluino is ideally suited for discovery, because 
+%many of its natural decay chains involve leptons (muons or electrons), which provide a very clean experimental probe. 
+%In fact, the discoveries of the ${\rm J}$/$\psi$, the W and Z bosons, as well as the top quark, were all made in leptonic decay modes. 
+%This is no coincidence. These final states provide in general very clean experimental signatures, increasing the potential for discovery. 
+%In the case of an unexpected signal, leptonic final states are even more important, because they allow to characterize the nature of the discovered phenomena more easily.
+%The recent measurements of the quantum numbers and the decay width of the Higgs boson are an example of the power of leptonic final states. %This is too loosely related with what we do
+%
+%%%This reads a little bit like a Wagner libretto :-) 
+%%In summary, at the dawn of the restart of the LHC at world-record energy, the search for signs of natural supersymmetry is 
+%%among the highest priorities of the experiments in their pursuit of exploring how nature may be beyond the SM. %Standard Model of particle physics. %Once defined, use abbreviation (here:SM)
+%%Leptonic final states are ideal experimental probes to search for new physics, as well as for eventual understanding of the physics underlying a potential discovery.
+%
+%At the dawn of the LHC restart, experimental groups from both  CMS and ATLAS collaborations are preparing for the upcoming data-taking period.
+%Natural SUSY is among the top priorities in their pursuit of exploring nature beyond the SM.
+%For this quest, leptonic final states are the suitable experimental probes and we plan to go beyond existing efforts by combining 
+%two complementary search strategies involving leptons. 
+%%Not totally happy:
+%This approach promises both, an optimal discovery potential for natural SUSY as well as the possibility to understand the underlying physics nature of a future discovery.
+
+
+\section{Objectives}\label{sec:objectives}
+
+%\begin{SCfigure}[]
+%%\centering
+%\hspace{1cm}\includegraphics[width=0.30\textwidth]{feyn/T1tttt_feyn.pdf}
+%\hspace{1.5cm}\caption{ Pseudo-Feynman diagram for gluino-mediated top squark production yielding four top quarks, $pp \to \tilde{g}\tilde{g} \to t\tilde{t}t\tilde{t} \to tttt\tilde{\chi}_0\tilde{\chi}_0 \to WWWWbbbb\tilde{\chi}_0\tilde{\chi}_0$, a typical SUSY particle production mode targeted by the search outlined in this project.}\hspace{-0.5cm}
+%
+%\label{fig:T1tttt}
+%\end{SCfigure}
+%
+%The main goal of this proposal is to finally settle the question whether or not natural SUSY is realized in nature.
+%%The old sentence was: With this research proposal, we aim to exploit these high-energy collisions, by analysing the data that will be collected by the CMS detector from 2015 to 2018, to finally settle the question of whether or not natural SUSY is realized in nature.
+%We plan a tandem research project to search for signals of gluino-initiated stop or sbottom production, comprising final states with a single lepton and with two leptons of the same charge.
+%%with leptons in 
+%%in a dataset of 300 fb${}^-1$,
+%
+%The LHC will restart operations in spring 2015 and deliver proton-proton collisions at a centre-of-mass energy of 13 \TeV. 
+%This increase in energy 
+%from the previously reached 8 \TeV %I doubt that this is helpful, but I can't delete everything....
+%will provide sensitivity to SUSY mass configurations never explored before
+%and will create the unique opportunity to tackle the naturalness problem.
+%The required dataset will be collected by the CMS experiment between 2015 and 2018. % in final states involving at least one lepton. %, electron or muon.
+%The LHC schedule overlaps favourably with this project and we foresee multiple publications, using fractions of up to the complete dataset collected in this period.
+%%two major publications at integrated luminosities of 100~fb${}^{-1}$ and 300~fb${}^{-1}$, respectively.
+%
+%
+%%The word 'technically' insinuates that we are completely in control of what we do - to the extent that we disregard our day to day work as something technical. Which, in truth, it is.
+%The two components of the tandem search are complementary by design and target more than half 
+%of the SUSY signal events resulting from gluino-initiated  production of third-generation squarks (See Fig.~\ref{fig:T1tttt}). 
+%%Gluino decays through third generation squarks lead to spectacular signatures with multiple W bosons, 
+%%bottom quarks, and two LSPs, the DM particle of the theory. Subsequent W boson decays dictate the number of leptons 
+%%observable in the detector. 
+%First, we pursue a search channel with a pair of same-charge leptons, providing an exceptionally pristine signature.
+%It allows to cleanly isolate a signal beyond the SM, possibly accompanied by additional leptons.
+%We complement this by a single-lepton search channel, which exhibits larger but well understood SM backgrounds, 
+%but at the same time targets a larger portion of the signal.
+%Pursuing both fronts at the same time, we coherently exploit the discovery potential of the LHC data in leptonic final states for models of natural SUSY.
+%%%The following is all relevant but should go to Sec. 8 -> I copied it there!
+%Synergies between the University of Ghent (UGent, Belgium) and the Institute for High Energy Physics (HEPHY, Austria) pertain key aspects on both sides of the tandem, and the related complementary expertise will be highly beneficial for the success of the proposed project.
+%Arguments supporting these statements will be discussed throughout the remainder of this proposal.
+%
+%By the end of the project, a clear image will have emerged from these and other searches for supersymmetry. Either a discovery will provide the long-awaited paradigm shift into the physics beyond the SM, or, in case no excess beyond the predictions from SM is observed, supersymmetry will lose its appeal as a potential solution to the hierarchy problem. In either case, the results will have direct impact on the future directions of the field of high-energy physics.
+%
+%%Prof.~Dobur has long standing experience on all aspects of the same-charge and multi-lepton analyses, as she was one of the leading persons in the searches in these channels with 7 and 8 TeV LHC data, 
+%%bringing crucial expertise for the execution of the entire project.  
+%%In particular, controlling the lepton reconstruction at the precision level that was achieved for the same-charge final states during 8 \TeV data taking,
+%%will substantially improve the lepton identification performance in the single-lepton final state.
+%%On the other hand, Dr.~Sch\"ofbeck has profound experience from searches in the single-lepton channel. 
+%%In particular, he has made major contributions in the development of suitable background estimation techniques that are still used by the CMS collaboration. 
+%%Moreover, from his role as convener of the CMS \ETmiss subgroup, he brings in year-long experience on this important observable that is used in every signal region in this proposal.
+%%
+%%The cross-pollination of the areas of expertise of the project promotors will yield a tremendous gain in efficiency, coherence, knowledge transfer, and student training opportunities on both sides.
+%%Arguments supporting this statement will be discussed throughout the remainder of this proposal.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The methodology}\label{sec:Method}
+
+%\begin{figure}[]
+%\centering
+%\subfigure[]{\raisebox{.1cm}{\includegraphics[width=0.33\textwidth, angle=0]{figures/ttbar.pdf}}}
+%%\subfigure[]{\includegraphics[width=0.34\textwidth, angle=0]{figures/mTLightStop.pdf}}
+%\subfigure[]{\includegraphics[width=0.32\textwidth, angle=0]{figures/hard_mu_ht600-6j-1b-diLepVeto-met200_mT_vs_mT2W_ttJets.pdf}}
+%\subfigure[]{\includegraphics[width=0.32\textwidth, angle=0]{figures/hard_mu_ht600-6j-1b-diLepVeto-met200_mT_vs_mT2W_SMS_T1tttt_2J_mGl1500_mLSP100.pdf}}
+%\caption{(a) The transverse momentum, $p_{\rm T}$, of the selected same-charge dileptons. The higher (lower) $p_{\rm T}$ is 
+%drawn on the x(y)-axis for the main SM background, $t\bar{t}$.
+%%Multiplicity of jets tagged as b-jets by the CSV algorithm in a single lepton selection \cite{CMS-PAS-TOP-12-027}. 
+%(b) Scatter plot $m_T$ and $m_{T2}^W$ for top quark pair production.
+%(c) The same distribution for a signal of gluino mediated top squark production (see Fig.~\ref{fig:T1tttt}) with $m_{\widetilde{g}}=1.5$ \TeV and $m_{{\widetilde\chi}^0_1}$ = 100 \GeV.
+%In all three plots relative fraction of events remaining in coloured triangles/boxes are given in legends}
+%\label{fig:mT-btag}
+%\end{figure}
+%
+%In this section we present the proposed tandem search strategy
+%%and discuss the increase in discovery or exclusion potential for gluinos that will be achieved by this proposal. 
+%%We also discuss how we benefit from novel analysis techniques developed by the two proponent groups. 
+%using an example diagram for gluino pair-production in Fig.~\ref{fig:T1tttt}. 
+%This production mode and the subsequent decay chain are most relevant in a scenario where the  $1^{\rm st}$ and $2^{\rm nd}$ generation squarks are very heavy, 
+%thus out of LHC reach, and the gluino is light enough to have a substantial production cross section.   
+%The top squark pair production initiated by gluinos would lead to spectacular experimental signatures containing many jets, leptons, b-quark jets (b jets) and large missing transverse momentum, \ETmiss. 
+%The latter variable is the key experimental signature of the DM candidate, because it manifests itself as undetected and therefore missing energy when analyzing the collisions.
+%The number of leptons  and jets in the final state are dictated by the $W$ boson decays. 
+%The largest branching fraction (BF) correspond to single-lepton (approx. 40\%) followed by same-charge dileptons, including three or four leptons (approx. $21\%$).  
+%In this project, we propose to pursue two search channels that will address these two decay modes. 
+%The two search channels will be mutually exclusive through requirements on the number of leptons, while both analyses will exploit the number of b~jets and \ETmiss to enhance signal over the SM background.   
+%% 0-lepton 20%; SS di-lepton: 10%, OS dilepton :20%; 3L :10%, 4L: 1%. 
+%
+%%\fixme{I would remove the following paragraph. There is no information. At least drop 'ground-breaking'?}
+%%For the race that will be triggered by the exciting prospects of ground-breaking discoveries at the coming LHC run, it is mandatory to optimize every step of the analysis  %for achieving maximal sensitivity. 
+%%In the following, we outline the most important aspects of our tandem research proposal with an emphasis on the complementarity and strengthening aspects of the two components.   
+% 
+%{\bf Same-charge dilepton search:}  The production rates for the SM processes which lead to prompt (originating from $W$/$Z$ bosons) 
+%lepton pairs with the same charge are very small (so-called low-background processes), while such lepton pairs are copiously produced in 
+%SUSY scenarios such as the one depicted in Fig.~\ref{fig:mT-btag}a.
+%%The SM prediction for the production rate of events with same-charge dileptons is very low   
+%%any significant excess of observed events above  the SM prediction will be attributed 
+%%to a discovery of new physics beyond the SM.  
+%The low-background nature of this topology makes it an important discovery tool for SUSY at the LHC.
+%In fact, this type of analysis was given high priority by the CMS collaboration in the past.
+%%, where Prof.~Dobur always kept a leading role in all steps. % of the analysis. 
+%The main SM background arises from top quark pair production, where one of the two leptons comes from a b-quark decay, which is difficult to describe accurately in simulation. 
+%Instead, this background can be quantified using the so called data-driven {\it b-tag-and-probe} technique which Prof.~Dobur developed in the past years~\cite{Chatrchyan:2011wba, Chatrchyan:2012sa}.
+%
+%As it will be pointed out later, furbishing the details of this technique with the aim to reduce the systematic uncertainties is a crucial part of the work ahead. 
+%The second largest background to this search consists of irreducible SM processes such as multi-boson production or top quark pair-production in association with vector bosons. 
+%This background will be estimated using MC simulations with next-to-leading order cross-sections. A relatively small background is expected to arise from mis-measurement of the charge of the leptons. This contribution will be quantified with a data-driven technique using Z boson events in data.  
+%In order to reach to an optimal signal to background separation 
+%we plan to perform the analysis in three exclusive categories defined by the transverse momentum, $p_{\rm T}$, of the leptons.
+%%, $\p_{\rm T}$; "Low-Low": both of the leptons within $\p_{\rm T}$[10-25] GeV ; "Low-High". 
+%These categories are illustrated with coloured regions in Fig.~\ref{fig:mT-btag}a for $t\bar{t}$ background. 
+%The most striking result of this categorisation is the reduction of the backgrounds in the region (indicated with a blue triangle) where both leptons are required to have $10 \leq p_{\rm T} \leq  25~{\rm GeV}$.  
+%Any SM background contributing with leptons coming from on-shell W/Z bosons will be strongly suppressed in this category. 
+%In fact, both $t\bar{t}$ and rare SM processes mentioned above get reduced by more than a factor of ten. 
+%This is particularly interesting for SUSY scenarios where the masses of the SUSY particles are compressed, 
+%thus the bosons are produced off the mass shell and yield soft leptons.  
+%Such compressed SUSY mass spectra are experimentally very challenging and the same-charge dilepton channel is one of the prime channels to search for these. 
+%
+%{\bf Single-lepton search:}
+%The single lepton channel, in turn, is subject to backgrounds from correctly reconstructed events that exhibit signal-like kinematical 
+%properties. 
+%It is therefore important to take full advantage of subtle differences in decay properties and achieve good agreement between
+%the recorded data and simulated events in validation regions. 
+%Top quark pair production is the dominant background of the single-lepton search because it provides two W bosons in its decay chain.
+%Those can each decay hadronically or into a lepton-neutrino pair, resulting in up to two leptons in the final state.
+%Purely hadronic decays are already mostly removed by the single-lepton requirement.
+%The observables most discriminating against the contributions involving leptons are related to the transverse mass of the parent particles, the W boson and the top quark.
+%% ($m_T$) as reconstructed in the lepton-\ETmiss system. 
+%Their power stems from the Jacobian peak that constrains the kinematics of the decay products, but at the same time 
+%this observable is deteriorated by detector resolution effects in \ETmiss. 
+%%The  latter observable  measures the total transverse neutrino momentum.
+%%Here, Dr.~Sch\"ofbeck contributes long experience in controlling \ETmiss performance from his activity in the CMS reconstruction teams, 
+%%including his role as convener of the \ETmiss group.
+%A stringent requirement on the transverse mass of the lepton-\ETmiss system ($m_T$) will therefore efficiently remove the top quark contribution
+%from events with a single lepton from the W bosons.
+%
+%The remaining events involve two leptons where one of them is either a hadronically decaying tau lepton or a lepton that is simply missed in the event reconstruction. 
+%Those can evade even tight $m_T$ requirements, because the additional \ETmiss induced by the second lepton-neutrino pair washes out the correlation between $m_T$ and the Jacobian peak.
+%In this situation, the more complex observable $m_{T2}^W$ can be used to reduce or eliminate the residual events \cite{Bai:2012gs}.
+%Its interplay with $m_T$ is the key to sensitivity in the single lepton channel. 
+%The scatter plots in Fig.~\ref{fig:mT-btag}(b,c) show the discriminating power due to 
+%the  L-shaped distribution of the background from top quark pairs.
+%A lower $m_T$ requirement of 120 \GeV removes 72\% of the top quark pairs but a significant contribution remains at low values for $m_{T2}^W$. 
+%Requiring also $m_{T2}^W>200$~\GeV still retains 45\% of the signal but only 6\% of the background. 
+%The requirements were chosen slightly above the Jacobian peaks of the W bosons the top quarks, respectively, but no attempt was made to find optimal values. 
+%The optimization of kinematical requirements is an important part of the proposed work plan.
+%
+%The data driven background estimation will proceed in two steps. 
+%First, templates in $m_T$ will be measured in data control regions 
+%with an inverted jet multiplicity requirement. 
+%This is possible because $m_T$ shapes depend only weakly on the jet multiplicity. Then,
+%those templates will be normalized in the low-$m_T$ regime with all other signal region requirements applied. The background estimate obtained in this way
+%is largely independent of systematic uncertainties related to production cross-sections and imperfections of the simulation. 
+%In the case of an unforseen non-negligible residual bias, correction factors will be obtained from simulated event samples. 
+%%According to our work plan, we also forsee the benefit of refining this robust strategy in the second half of the project,
+%%taking into account the experience gained in the first stage.
+%
+%
+%%The discriminating power of any MVA classifier will ultimately depend on the quality of its input variables.
+%%To ensure that the full detector performance is available at analysis level, 
+%%the particle-flow (PF) algorithm \cite{CMS-PAS-PFT-09-001} has been developed. % and corresponding performance studies have started with first collision data.
+%%Almost three years of data taking have provided us with an excellent quantitative understanding of resolutions, 
+%%reconstruction efficiencies and misidentification rates of the physics objects (jets, \cPqb-tagged jets, \ETmiss, electrons, muons and taus).
+%%However, novel reconstruction and identification methods using MVA techniques have rarely been fully exploited at the analysis level. 
+% 
+%%We aim for either the discovery or the exclusion of natural SUSY by searching for gluino pair production in two the ``single-lepton channel'', 
+%%which is characterized by the requirement of \fixme{whatever}.
+%%Both of these channels are among those with the highest prospects of discovery for a wide range of the unknown SUSY masses and a priority to the %CMS~collaboration~\cite{CMS:2013xfa}.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{figure}[]
+%\begin{center}
+%\subfigure[]{\hspace{-1cm}\raisebox{-.3cm}{\includegraphics[width=.46\linewidth]{figures/susy_xsec_r14_and_8tev.pdf}}}
+%\subfigure[]{\includegraphics[width=.39\linewidth]{figures/t1tttt_discovery_projection.pdf}}
+%\caption{\ (a) Next-to-leading order cross sections for gluino-pair production (blue), production of third generation squarks (red) and chargino-neutralino production (green) for 8 \TeV and 14~\TeV~\cite{CMS:2013xfa}.
+%(b) Performance projection of a 5$\sigma$ discovery for 300~fb$^{-1}$ at $\sqrt{s} = 14$ \TeV \cite{CMS:2013xfa}. }
+%\label{fig:T1tttt-limits}
+%\end{center}
+%\end{figure}
+%
+\subsubsection*{Entering new territory with the $\sqrt{s} = 13$ \TeV LHC run}
+%The first LHC data at 7 TeV, collected during 2010, led to the exploration of SUSY particles at masses that could never be reached before. The constraints on the %parameters of supersymmetry shattered the previous results obtained at LEP and TEVATRON. 
+
+%The increase in center-of-mass energy from 8 to 13 \TeV in the upcoming LHC run will enable the production of SUSY 
+%particles with much higher masses compared to what was achieved with 8 \TeV. 
+%This is illustrated in Fig.~\ref{fig:T1tttt-limits}a, where the pair-production rate of SUSY particles as a function of their mass is shown for 8 and 14 \TeV. 
+%Furthermore, the energy increase will affect the production rates in favour of an increased ratio of signal over background. 
+%In the most relevant mass ranges, the production rate for gluino pairs increases more than an order of magnitude while the dominant background from top quark pair production
+%%, which is the leading SM background to the searches outlined in this project, 
+%increases by a factor of only $\sim4$.
+%Projections for the discovery potential at 13 TeV can be obtained by scaling the SM backgrounds and the signal yields according to these cross-section ratios. 
+%The 5$\sigma$ discovery reach estimated in this way is shown in Fig.~\ref{fig:T1tttt-limits}b for a dataset of 300~fb$^{-1}$ and center-of-mass energy of 14 \TeV. 
+%This projection uses the 8 \TeV single-lepton analysis as a basis~\cite{Chatrchyan:2013iqa}. % channel improve net in the analysis with resect to 8 TeV. 
+%Although the size of the dataset targeted in this proposal is around 100~fb$^{-1}$ and the center-of-mass energy is 13 \TeV , the results of Fig~\ref{fig:T1tttt-limits}b can be still taken as an indication for the discovery reach of the analysis we propose. 
+%%Even with such conservative assumptions we can discover gluinos up to masses of 1.9 \TeV.  
+%In summary, 13~\TeV LHC data will open up a new unexplored territory towards the high gluino masses. 
+%For the signal scenario considered in this project, we expect the single-lepton channel to play the leading role to probe such high masses, while the power of the same-charge channel will be most prominent in the compressed SUSY mass spectra. 
+%
+%%Studies we perform for 20 fb$^{-1}$ we can discover gluinos up to  1.65 \TeV and a 95\% CL exclusion can even be obtained for masses up to 1.85~\TeV if the LSP %mass is below 800 \GeV. This amount of data could already be accumulated by the end of the first year of the next LHC run.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Probing compressed sparticle mass spectra}
+%Apart from experimental lower bounds and theoretical upper bounds from naturalness arguments,
+%%considerations introduced on a subset of the SUSY particles due to the naturalness arguments, 
+%the masses of SUSY particles are not constrained. % by the theory. 
+%As the energies and the kinematics of the SM particles emerging from the decays of SUSY particles 
+%are directly driven by the spectrum of the SUSY particle masses, dedicated analysis strategies are vital for different mass hierarchy scenarios. 
+%
+%So far, one of the least explored SUSY scenarios
+%%where nature may be hiding, 
+%is the case of compressed spectra where supersymmetric particles have similar masses. 
+%Same-charge dilepton pairs provide sensitive probes in these challenging cases because of their small total background yields. %compared to other final states. 
+%Nonetheless, challenges remain. 
+%%We plan to design the searches to encompass this case in addition to final states with large mass splittings. 
+%In the compressed mass scenario, leptons, jets and \ETmiss carry low momenta, making the signal similar to SM backgrounds. 
+%The resemblance between the signal and the background increases the importance of controlling the systematic uncertainties on the background prediction. 
+%In turn, a better understanding of the dominant backgrounds will increase the sensitivity of the analysis. 
+%As part of the preparations for 13 TeV LHC data analysis, Prof.~Dobur and Dr.~Shchutska (the postdoc who will be hired on this project) are already engaged in collaborative efforts that aim to reduce the systematic uncertainties on two main SM backgrounds for the same-charge dilepton search. %Preliminary studies indicate    
+%
+%%\begin{figure}[]
+%%\centering
+%%\subfigure[]{\includegraphics[width=0.45\textwidth, angle=0]{figures/pfMETcleaned.pdf}}\hspace{1cm}
+%%\subfigure[]{\includegraphics[width=0.45\textwidth, angle=0]{figures/pfMETResolutionParallelZtoMuMu.pdf}}
+%%\caption{(a) Distribution of \ETmiss in a dijet selection at 8 \TeV before and after an event cleaning removing events with noise and beam halo background \cite{CMS-
+%%PAS-JME-12-002}. 
+%%(b) Resolution of \ETmiss in \Zz~$\rightarrow\mu\mu$ events as a function of the number of reconstructed vertices for standard \ETmiss (black) and MVA \ETmiss %
+%%(blue) \cite{CMS-PAS-JME-12-002}.
+%%}
+%%\label{fig:met}
+%%\end{figure}
+%%The physics goal of the CMS detector, described in detail in Ref.~\cite{ref:CMS}, is to explore the \TeV-scale \cite{PTDR2}.
+\subsubsection*{Challenges at high luminosity}
+
+%During the coming LHC run, not only the collision energy will increase but also the collision rate, so-called luminosity. 
+%This anticipated increase in instantaneous luminosity up to the LHC design value of $10^{34} \cm^{-2}s^{-1}$ leads to an increase in the number of simultaneous proton-proton collisions (pileup). 
+%On the one hand, higher collision rates will enable probing rarer (low cross section) physics processes; on the other hand, it will pose experimental challenges in relating detector signals to the underlying physics, a core experimental task called event reconstruction.
+%
+%In order to assure high reconstruction efficiency for possible SUSY signals, optimisation of novel reconstruction techniques to cope with such dense pileup environment is compulsory. 
+%A common effort is put in place in CMS to tackle this task in general. 
+%Nonetheless, several analysis-specific aspects of this task will have to be dealt with by the proponents of this project. 
+%Electrons and muons coming from signal events are characterised by their isolation from other particles. 
+%This unique property however is blurred by the high pileup as well as by the dense hadronic activity environment characteristic to the SUSY signal we consider in this proposal. 
+%We therefore foresee some dedicated work to optimise the lepton selection, especially for low-momentum leptons.% which are of particular interest for this research proposal.
+%
+%Missing transverse momentum, \ETmiss, plays a central role for signal and background separation. 
+%Its discrimination power can be degraded due to miscalibration of the detector as well as due to high pileup. 
+%As coordinator of the group responsible for the \ETmiss developments and performance in CMS in general, Dr.~Sch\"ofbeck is ideally placed to provide the best performing calibrations for \ETmiss. Also, Wolfgang Adam, a member of HEPHY team who will participate in the execution of the project, is an expert in identification of jets originating from b quarks (b jets), and will furnish his expertise for this important aspect of the analysis, since the signal we consider has four b-quarks in it.
+%
+%Another challenge raised by the high luminosity and resulting pileup applies to the online event selection. 
+%This task needs to be taken care of prior to the data taking. 
+%Prof.~Dobur and Dr.~Sch\"ofbeck already took the necessary steps to put in place algorithms (triggers) specifically designed for this analysis. 
+%The performance of these triggers will need to be monitored throughout the data taking to assure a highly efficient collection of potential new-physics events.
+%
+%%In summary, the proponent teams are well equipped with the expertise necessary to overcome the challenges of the upcoming LHC data, and capitalise on this data optimally.
+
+\subsubsection*{Complementarity and strengthening aspects of the tandem}
+
+%We aim for either the discovery of natural SUSY or to contribute to its exclusion by searching for gluino pair production in two of its possibly most prominent decay channels. 
+%Both of these channels are among those with the highest prospects of discovery for a wide range of the unknown SUSY masses and are thus a priority to the CMS~collaboration~\cite{CMS:2013xfa}. 
+%At the same time, these channels are highly complementary as they provide their best sensitivities in complementary regions of the SUSY parameter space.
+%%Indeed, as discussed above, the single-lepton channel will be most powerful at the high gluino mass, while the same-charge dileptons will be maximally beneficial to tackle compressed spectra.
+%
+%By performing the two analyses in an integrated way between the two involved groups, we can achieve a much broader as well as deeper impact, than with single analyses by the individual groups. 
+%On the technical side, a much higher efficiency will be achieved through the sharing of expertise, resources, and by avoiding upfront incoherence in analysis strategy. 
+%Furthermore, in absence of a discovery, the joint effort will achieve a leading position in the subsequent combination of limits on SUSY models. 
+%If, on the other hand, a signal is uncovered in one analysis, this will immediately provide focus for the other, and under the resulting high pressure, it provides the possibility to shift resources according to the analysis needs. 
+%In the best case scenario of a simultaneous discovery in both channels, a leading role will befall the proponents of this proposal for the subsequent delicate period of interpretation of the observed signal across channels.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The work plan}\label{sec:work}
+%Fig.~\ref{fig:workplan} shows an overview of the work and time plan assuming a starting date of the project in January 2016.
+%We propose that the project is carried out by a post-doc, Dr.~Shchutska under the supervision of Prof.~Dobur at UGent and a Ph.D. student (N.N.) under the supervision of Dr.~Sch\"ofbeck at HEPHY. 
+%Prof.~Dobur and Dr.~Sch\"ofbeck will on average devote 50 and 35\% of their research time on this project, respectively, each with particular focus on the items marked accordingly in Fig.~\ref{fig:workplan}.
+%The analysis group in Vienna currently comprises one Ph.D. and two master students and therefore the need for technical supervision is reduced. Moreover, W. Adam (HEPHY) will work 10\% of his time on project tasks related to b-jet identification.
+%The post-doc (Dr.~Shchutska) and the Ph.D. student will work full time on the project.
+%%During the intense period preceding the start of data taking at $\sqrt{s}=$13 or 14~\TeV, currently foreseen in April 2015, the team will be strengthened by a master student (MS).
+%%\fixme{Robert: make explicit with w+t plan:} Wolfgang Adam, a member of the HEPHY team, will devote 10\% of his time to specific tasks that can benefit from his expertise.
+%
+%A period of 3 years is required to perform the analysis and to publish two publications in international journals. 
+%This period coincides favourably with the planned LHC schedule, which foresees the start of
+%data-taking in Summer 2015 and runs up to July 2018 after which LHC shuts down for a year and a half. 
+%%and two extended technical stops (starting Dec. 2016 and July 2018), which we align with the publication plan.
+%There are two publications planned with a dataset of $\sim$20 fb${}^{-1}$ and $\sim$100 fb${}^{-1}$, respectively, each corresponding to a significant increase in sensitivity. 
+%Moreover, the CMS collaboration plans to publish preparatory results before the start of this project. %, for analysis which reach their 8 \TeV sensitivity.
+%These are meant as iterations of 8 \TeV results and therefore do not impede the proposed publication~plan.% because. % from the 8 \TeV data-taking period is superseded. 
+%
+%\begin{figure}[]
+%\centering\vspace*{-.2cm}
+%\includegraphics[width=1\linewidth]{figures/workplan}
+%\caption{\
+%Summary of the work and time plan for the project leaders D.~Dobur~(DD, UGent staff), R.~Sch\"ofbeck~(RS,~HEPHY staff), Dr.~L.~Shchutska (LS, post-doc, to be hired),  W. Adam (WA, HEPHY staff) and a Ph.D. student (HEPHY, to be hired).
+%}
+%\label{fig:workplan}
+%\end{figure}
+%
+%As explained above, the online event selection (trigger requirements) are already in place. 
+%During the foreseen increase in luminosity, it will be important to monitor their performance and mitigate the impact
+%on the analysis by appropriately tightening signal- and control region selections for both, the single lepton and the same-charge lepton analysis. 
+%The rest of the proposed work is split into ten goals.
+%\begin{itemize}\setlength{\itemsep}{-1pt}
+%\item[1.]{Define optimal signal region definitions for the single-lepton and the same-charge analysis. 
+%Observables comprise the multiplicity of jets ($n_{\textrm{jet}}$) and b-tagged jets ($n_{\textrm{b-tag}}$), \ETmiss, the transverse lepton momenta ($p_{T}(l_{1,2})$) and the scalar sum of transverse jet momenta (\HT). 
+%This task is executed in close exchange between UGent and HEPHY and common selection requirements are favoured when possible.
+%For the single-lepton search, $m_T$ and $m_{T2}^W$ are included as well.}
+%\item[2.]{
+%\boldStart{same-charge dilepton:} 
+%Optimize the b-tag-and-probe method with the goal for reducing systematic uncertainties. Validate the technique in MC simulations as well as in control regions with real data. Quantify the background contribution from mis-identified leptons. Settle on systematic uncertainty on each SM background source.
+%\boldStart{single lepton:} Measure $m_T$ templates in signal free low $H_T$ control regions. 
+%Obtain background estimation by normalizing the templates at low $m_T$. Validate the  results regions with inverted jet multiplicity requirements. 
+%If necessary, obtain suitable correction factors from simulated data.}
+%\item[3.]{Measure systematic uncertainties related to the \ETmiss resolution, the jet energy scale and resolution, the lepton and b-jet identification and momentum resolution and the theoretical
+%uncertainties of simulated signals. For this task, the project members work primarily according to their expertise, not according to their home institute. We foresee that the same-charge analysis will need higher integrated luminosities and therefore more time to obtain sufficient statistical power in control region tests. }
+%\item[4.]{After finalising all the systematic uncertainties on the expected SM backgrounds, unblind the signal regions. Obtain joint result and claim discovery or obtain joint exclusion limits in the configuration space of supersymmetric models amounting to approx. 20~fb${}^{-1}$.}
+%\item[5.]{\boldStart{Milestone:} Obtain approval of the collaboration and write a journal paper.}
+%\item[6.]{
+%Study validation regions and reconstruction performance with a focus on PU mitigation. This task includes the development of important refinements of both the single lepton 
+%and the same-charge search strategy according to the experience gained during the 2016 data taking period. 
+%}
+%\item[7.]{
+%\boldStart{same-charge dilepton:} Optimize lepton selection criteria according to the increase in pileup. 
+%Investigate the gain from novel reconstruction algorithms and lepton isolation observables that will be provided by the CMS collaboration in time for the start in Spring 2017.
+%\boldStart{single lepton:} Optimize definitions of signal regions according to the higher integrated luminosity, adjust analysis selection requirements to the changes in the online selection. 
+%}
+%\item[8.]{Measure systematic uncertainties related to the \ETmiss resolution, the jet energy scale and resolution, the lepton and b-jet identification and momentum resolution and the theoretical uncertainties of simulated signals. 
+%Again, the project members work primarily according to their expertise, not according to their home institute. }
+%\item[9.]{Unblind the signal regions when the 2018 data taking period is over. 
+%Obtain joint result (100fb${}^{-1}$) and claim discovery or obtain joint exclusion limits in the configuration space of supersymmetric models.}
+%\item[10.]{\boldStart{Milestone:} Obtain approval of the collaboration and write a journal paper.}
+%\end{itemize} 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+\bibliographystyle{woc} % or "unsrt", "alpha", "abbrv", etc.
+\begin{footnotesize}
+\begin{singlespacing}
+\bibliography{biblio}
+\end{singlespacing}
+\end{footnotesize}
+
+\section{Outreach: Communicating the outcome of the research to public}
+%Our current daily life is pervaded by the advanced technology products that are nourished by the scientific research of the past century, as well as the wide cultural prospects science has opened to mankind. 
+%%Dr.~Dobur is well aware of the importance of disseminating science to general public, in particular in her own research field which often gets questioned by the general public about the necessity of its expensive particle accelerators and detectors. Therefore, 
+%Prof.~Dobur and Dr.~Sch\"ofbeck consider the outreach activities among the high priority tasks for the scientific research community as it promotes awareness and an appreciation of the current research on general public and also is an excellent way to attract the young generation interested in research.
+%
+%Both proponents of this proposal have extensive experience in outreach activities. Some examples of these for Prof.~Dobur are ``Public lecture day for the Turkish community in Switzerland'', 
+%%which she and her colleagues organized in collaboration with the General Consulate of Turkey in Geneva, 
+%guiding visitors at CERN, participating in outreach activities of the European Commission as a Marie Curie fellow and giving interviews to press at several occasions.  Dr.~Sch\"ofbeck has given approx. 20 public talks in Austrian schools, created a five-part radio broadcast and regularly gives outreach talks on occasions such as the opening of the ``Keplersalon'' in Linz, Austria (2010) or the annual meeting of the Austrian Astronomical Society. 
+%             
+%Also UGent and HEPHY are very active in outreach activities.
+%%in addition to research and higher education, are very active in their third mission, i.e. ``service to society'', which ranges from knowledge and technology transfer to outreach activities. 
+%Some concrete examples of regular outreach activities where the promotors of this project are or will be directly involved in are: the yearly organization of the CERN International Masterclasses in Particle Physics for high school students and teachers; guided tours for visitors (schools or general public) of the CERN site and the CMS experimental area in particular; participation to the Flemish Science Week (“Wetenschap in de Kijker”); organization of internships for high school or university students at CERN or Flemish universities.
+%
+%In summary, Prof.~Dobur and Dr.~Sch\"ofbeck have the necessary experience in outreach activities and are willing to continue their commitment to outreach. In particular, in case of the discovery of supersymmetry at the LHC in the coming years, which is the main objective of this research proposal, the whole particle physics community will be under the spotlight once again. At such a unique, exciting occasion, the proponents of this proposal will use all available means to disseminate this discovery throughout society.
+%
+
+\section{Most relevant publications of the (co)-promoters}
+%%- 5 key peer reviewed publications for each (co-)supervisor and foreign (co-)supervisor that are representative for his/her scientific career. \\
+%%- indicate the ones that are relevant for this proposal with an asterisks \\
+%%- Give full bibliographic details, indicate the impact~factor~of the journal in the year of publication, effective number of citations, and the number of pages. \\
+%%Source for impact factors
+%%http://www.citefactor.org/journal-impact-factor-list-2014.html
+%
+%Publications that are relevant for this proposal are marked with $\ast$
+%
+%%\begin{flushleft}
+%\boldStart{ Prof. D. Dobur }
+%\begin{footnotesize}
+%%\begin{minipage}[t]{15.5cm}  
+%\begin{enumerate}
+%\item [1.${}^\ast$] CMS Collaboration, {\it Search for new physics in events with same-sign dileptons and jets in pp collisions at $\sqrt{s}$~=~8~TeV}, {\bf JHEP} 01 (2014) 163, {impact factor 6.2, 45pp., 52~cites.}
+%%\item [2.${}^\ast$] CMS Collaboration, {\it Search for new physics in events with same-sign dileptons and b jets in pp collisions at $\sqrt{s}$~=~8~TeV}, {\bf JHEP} 03 (2013) 037, {impact factor 6.2, 29pp., 67~cites.}
+%\item [2.] Zeus Collaboration, {\it Forward-jet production in deep inelastic ep scattering at HERA}, {\bf Eur. Phys. J. C.} 52 (2007) 515-530, {impact~factor~2.8, 32pp., 23~cites.}
+%\item [3.${}^\ast$] CMS Collaboration, {\it Search for electroweak production of charginos and neutralinos using leptonic final states in pp collisions at $\sqrt{s}$ = 7 TeV}, {\bf JHEP} 11 (2012) 147, {impact factor 5.6, 45pp., 66~cites.}
+%%\item [4.${}^\ast$] CMS Collaboration, {\it Search for new physics in events with same-sign dileptons and b-tagged jets in pp collisions at $\sqrt{s}$ = 7 TeV}, {\bf JHEP} 08 (2012) 110, {impact~factor~5.6, 35pp. 82~cites.} 
+%\item [4.${}^\ast$] CMS Collaboration, {\it Search for New Physics with Same-Sign Isolated Dilepton Events with Jets and Missing Transverse Energy}, {\bf Phys. Rev. Lett.}~109 (2012) 071803, {impact factor 7.9, 27pp., 65~cites.}%, {\bf WOS:000307709400008}.
+%\item [5.] CMS Collaboration, {\it Observation of a new boson at a mass of 125 GeV with the CMS experiment at the LHC}, {\bf Phys. Lett. B} 716 (2012) 30-61, {impact~factor~4.7, 42pp., 3976~cites.}
+%%\item [1.${}^\ast$] CMS Collaboration, {\it Search for new physics with same-sign isolated dilepton events with jets and missing transverse energy at the LHC}, {\bf JHEP} 06 (2011) 077%, {\bf WOS:000293136600004}.
+%\end{enumerate}
+%%\end{minipage}\\  
+%%\end{flushleft}
+%\end{footnotesize}
+%
+%%\begin{footnotesize}
+%%\begin{flushleft}
+%\boldStart{Dr. R. Sch\"ofbeck}
+%%\begin{minipage}[t]{15.5cm}  
+%%\vspace{-0.1cm}
+%\begin{footnotesize}
+%\begin{enumerate}
+%%\item [2.${}^\ast$]  CMS Collaboration, {\it ``Performance of the CMS missing transverse momentum reconstruction in pp data at $\sqrt{s}$ = 8 TeV''}, {\bf JINST} 10 (2015) 02006, {impact~factor~1.5, 55pp., 3~cites.}%, doi:10.1088/1748-0221/10/02/P02006
+%\item [1.${}^\ast$] CMS collaboration, {\it ``Search for supersymmetry in pp collisions at $\sqrt{s}$=8 TeV in events with a single lepton, large jet multiplicity, and multiple b jets''}, {\bf Phys. Lett. B}, 733 (2013) 328-353, {impact~factor~6.0, 25pp., 44~cites.}%, doi:10.1016/j.physletb.2014.04.023
+%\item [2.${}^\ast$] CMS collaboration, {\it ``Search for supersymmetry in final states with a single lepton, b-quark jets, and missing transverse energy in proton-proton collisions at $\sqrt{s}$~=~7~TeV''}, {\bf Phys. Rev. D} 87 (2013) 052006, {impact~factor~4.8, 28pp., 22~cites.}%, doi: 10.1103/PhysRevD.87.052006
+%\item [3.${}^\ast$] CMS collaboration, {\it ``Search for supersymmetry in pp collisions at $\sqrt{s}=7$ \TeV in events with a single lepton, jets, and missing transverse momentum''}, {\bf Eur. Phys. J. C} 73 (2013) 2404, {impact~factor~5.4, 57pp., 19~cites.}%, doi:10.1140/epjc/s10052-013-2404-z
+%\item [4.${}^\ast$] CMS collaboration, {\it ``Missing transverse energy performance of the CMS detector''}, {\bf JINST} 6 (2011) 09001, {impact~factor~1.8, 56pp., 157~cites.}%, doi:10.1088/1748-0221/6/09/P09001
+%\item [5.] CMS Collaboration, {\it Observation of a new boson at a mass of 125 GeV with the CMS experiment at the LHC}, {\bf Phys. Lett. B} 716 (2012) 30-61, {impact~factor~4.7, 42pp., 3976~cites.}
+%%\item [5.] A. Rebhan, R. Sch\"ofbeck, P. van Nieuwenhuizen, and R. Wimmer. {\it ``BPS saturation of the N=4 monopole by infinite composite-operator renormalization''}, {\bf Phys. Lett. B}, 632 (2006) 145-150, {impact~factor~5.0}%, doi:10.1016/j.physletb.2005.10.0
+%\end{enumerate}
+%%\end{minipage}\\  
+%%\end{flushleft}
+%\end{footnotesize}
+
+\section{Summary}
+%(Up to 1500 characters)\\
+%Give a summary of the research proposal in layman's terms.\\ 
+%
+%
+%At this moment, the Large Hadron Collider (LHC) is the unique facility at which particle-physics research is performed at the highest energies reached in the laboratory. After the triumph of the Higgs boson discovery in the 2010-2012 LHC running period, the searches for new physics beyond the Standard Model (SM) are now the priority of the LHC physics program.
+%One of the most studied new-physics models is called Supersymmetry (SUSY). This theory predicts many new particles to address some of the fundamental open questions in particle physics, most notably the so-called hierarchy problem. The masses of these new particles are not predicted by the theory, but several are expected to be within the discovery reach of the LHC, in case SUSY is to solve the hierarchy problem in a natural way. The LHC provides a unique place to search for such natural SUSY.
+%
+%The proposed project aims to bundle the strengths of the UGent and HEPHY institutes in a tandem search for such natural SUSY, using the data from the coming LHC run in 2015-2018.
+%By the end of the project, a clear image will have emerged from these and other searches for supersymmetry. Either a discovery will provide the long-awaited paradigm shift towards physics beyond the SM, or, in case no excess beyond the SM predictions is observed, supersymmetry will lose its appeal as a solution to the hierarchy problem. In either case, the results will have direct impact on the future directions of the field of high-energy physics.
+%
+%% 25 characters too long...
+%%At this moment, the Large Hadron Collider (LHC) is the unique facility at which particle-physics research is performed at the highest energies achieved in the laboratory. After the triumph of the Higgs boson discovery in the 2010-2012 LHC running period, the searches for new physics beyond the Standard Model becomes the priority of the LHC physics program. 
+%%%the focus for the next LHC run at higher energies remains on the searches for new physics beyond the Standard Model. 
+%%One of the most studied new-physics models is called Supersymmetry (SUSY). This theory predicts many new particles to address several of the fundamental open questions in particle physics, most notably the so-called hierarchy problem. Although the masses of these new particles are not predicted by the theory, several of these are expected to be within the discovery reach of the LHC, in case SUSY is to solve the hierarchy problem in a natural way. The LHC provides a unique place to search for such natural SUSY. %Any new discovery in this area would be ground breaking, with direct consequences for several other fields of research, like astro-particle physics and cosmology, as well as our basic understanding of space, time and matter, with unpredictable theoretical and practical consequences.
+%%
+%%The proposed project aims to bundle the strengths of the UGent and HEPHY institutes in a tandem search for such natural SUSY, using the data from the coming LHC run in 2015-2018. 
+%%By the end of the project, a clear image will have emerged from these and other searches for supersymmetry. Either a discovery will provide the long-awaited paradigm shift into the physics beyond the SM, or, in case no excess beyond the predictions from SM is observed, supersymmetry will lose its appeal as a potential solution to the hierarchy problem. In either case, the results will have direct impact on the future directions of the field of high-energy physics. \fixme{add CMS} \fixme{shorten ~150 characters}\\
+%
+%
+
+\section{What is the added value of this scientific collaboration}
+%(3000 characters)\\
+%{\it Elaborate on the complementary expertise of the project partners}\\
+%{\it Explain how the project parts are integrated and relevant for the scientific input from both sides}\\
+%{\it Explain how this project fits in the research activities of your research group and the foreign research group}\\
+%{\it If the project has already been initiated, please state the progression of your research}\\
+%
+%Prof. Dobur has very recently been hired as a junior faculty at UGent. Throughout her career, in particular during her activities in CMS as a leading person in supersymmetry (SUSY) searches, she built an international scientific network. With this proposal, she intends to capitalize upon this network through a collaboration with the HEPHY team of Dr. Schoefbeck, thereby achieving a large impact in the field.
+%
+%Dr. Schoefbeck is a dynamic young researcher with extensive experience in SUSY searches in CMS. He is in particular an expert of so-called missing energy, which is the experimental signature of the SUSY dark matter candidate. He is the coordinator of the team responsible for the development and the performance of this missing energy for the entire CMS collaboration. In addition, Wolfgang Adam, a member of Dr. Schoefbeck's team, is an expert on b-quark identification. Prof. Dobur, on the other hand, has a long track-record in SUSY searches in general, with a particular emphasis on lepton identification. All these complementary ingredients, missing energy, b-quark, and lepton identification, are vital towards the success of this project. Combining all this expertise will allow both partner institutes to reach the necessary critical mass. This is in particular important in the competitive environment of large scientific collaborations like CMS. Moreover, the cross-pollination of the areas of expertise of the project promotors will lead to an increased knowledge transfer, and provide student training opportunities on both sides.
+%
+%The two parts of the research proposal integrate towards the same goal: the search for natural SUSY with the CMS data. At the same time, the proposed search channels are fully complementary as they provide their best sensitivities in distinct regions of the SUSY parameter space. By performing the two analyses in an integrated way between the two involved groups, we can achieve a much broader as well as deeper impact, than with single analyses by the individual groups. On the technical side, a much higher efficiency and coherence will be achieved through the sharing of expertise and resources.
+%
+%The proposed research fits excellently in both institute's current physics program. On the HEPHY side, it constitutes a continuation of a long-standing tradition of leading searches for SUSY. On the UGent side, on the other hand, with this project a new branch in SUSY searches will be opened around a new faculty member, building upon existing expertise in top physics and other SUSY searches.
+%
+%The project has already started, though not yet in a joint fashion: preparations for the individual analyses are ongoing to get ready for the upcoming data taking starting in the summer 2015, in particular online event selection algorithms (triggers) are being put in place.
+%
+%%Furthermore, in absence of a discovery, the joint effort will naturally achieve a leading position in the subsequent combination of limits on SUSY models. 
+%%If, on the other hand, a signal is uncovered in one analysis, this will immediately provide focus for the other, and under the resulting high pressure, it provides the possibility to shift resources according to the analysis needs. 
+%%In the best case scenario of a simultaneous discovery in both channels, a leading role will again naturally befall the proponents of this proposal for the subsequent delicate period of interpretation of the observed signal across channels.
+%
+%%On the HEPHY side, the consolidation of the SUSY activities through this project will enable a sustained, but broadened impact in the field of leptonic SUSY searches. On the side of UGent, it will allow for the SUSY search team currently being built to become immediately effective in this crucial period where LHC Run-II is commencing.
+%%The project has already started, in the sense that preparations for the individual analyses are already ongoing, to prepare the upcoming data taking starting in the summer 2015. Furthermore, it an extended visit at UGent by Dr. Sch\"ofbeck is foreseen for the fall. 
+%
+%
+%%Synergies between the University of Ghent (UGhent) and the HEPHY (Institute for High Energy Physics, Austria) pertain key aspects on both sides of the tandem and are critical for the proposal.
+%%Prof.~Dobur has long standing experience on all aspects of the same-charge and multi-lepton analyses, as she was one of the leading persons in the searches in these channels with 7 and 8 TeV LHC data, 
+%%bringing crucial expertise for the execution of the entire project.  
+%%In particular, controlling the lepton reconstruction at the precision level that was achieved for the same-charge final states during 8 \TeV data taking,
+%%will substantially improve the lepton identification performance in the single-lepton final state.
+%%On the other hand, Dr. Sch\"ofbeck has profound experience from searches in the single-lepton channel. 
+%%In particular, he has made major contributions in the development of suitable background estimation techniques that are still used by the CMS collaboration. 
+%%Moreover, from his role as convener of the CMS \ETmiss subgroup, he brings in year-long experience on this important observable that is used in every signal region in this proposal.
+%
+%%The cross-pollination of the areas of expertise of the project promotors will yield a tremendous gain in efficiency, coherence, knowledge transfer, and student training opportunities on both sides.
+%%Arguments supporting this statement will be discussed throughout the remainder of this proposal.
+
+
+\section{Provide any other relevant national and international context of the project}
+(1800 characters)
+%The proposed research project will be conducted within the CMS collaboration at CERN. This scientific collaboration comprises over 2600 physicists, of which about 900 are students, from 182 institutes in 42 countries around the world. Both institutes, UGent and HEPHY, are members of the CMS collaboration. As such, both teams work in this international environment on a daily basis since many years, and have made major contributions to the experiment spanning from the construction and operation of the detector to publishing physics results by analyzing the data.  
+%
+%The CMS physics program is organized into various groups, one of which is the CMS SUSY working group.  Around 40 institutes participate in this working group, which led to about 12 publications per year on average in the past years.
+%This low ratio of publications per participant is testament of the complexity of the research in this field. Achieving a leading role in such environment thus requires a wide but focused expertise, which UGent and HEPHY intend to accomplish through this collaboration.
+%
+%On a national level, interdisciplinary networks are present in both institutes, from which this proposed project can benefit. Connected to the dark-matter candidate of SUSY, synergies exist with dark matter searches in non-collider experiments. In UGent, the IceCube team participates in searches for dark matter annihilations in the sun or the earth; at HEPHY a new group was formed working on direct dark-matter searches led by the new head of HEPHY, Jochen Schieck. Moreover, both institutes are strongly connected with phenomenology groups at the national and international level.
+%
+\section{Describe the past cooperation between the project partners}
+%{\it (up to 1800 character)\\
+%Mention that we had been working in a big collaboration together\\
+%There has been already very productive collaboration between the two partners in the RUN I data analysis. \\
+%Maybe worth mentioning Didar being the Leptonic SUSY convener while  Robert being one of the key persons  doing a SUSY search on single-lepton channel ? 
+%}
+
+%As stated elsewhere, CMS is a large collaboration. 
+%currently comprises 3660 members from 
+%184 institutes in 42 countries. 
+
+%Both, UGent and HEPHY have been working on searches for supersymmetry since the start of the LHC in 2010 in the environment of friendly competition inside CMS. At that time, the most studied SUSY models were constrained models that predict a complicated spectrum of supersymmetric particles. Decay chains and analysis strategies were split according to final state multiplicities in order to cope with the complexity. For this reason, however, synergies between different analyses could not be fully exploited. Nonetheless, exchange of ideas started when Prof. Dobur embarked on her two-year term as convener of the CMS leptonic SUSY group in 2011.
+%
+%The CMS group structure was changed in 2012 in order to reflect the shift in focus towards models of natural supersymmetry,  but the published 8 TeV SUSY results still reflect the earlier structure in many cases. During the early preparations for the new data-taking period at 13 TeV, in Summer 2014, the UGent and the HEPHY groups realized that a project on natural SUSY, combining the clean same-charge signature with the sensitive single-lepton channel, will boost overall sensitivity. At the same time it was realized that expertise is complementary between the groups and that the cross-pollination will yield a tremendous gain in efficiency, coherence, knowledge transfer, and student training opportunities on both sides.
+%
+%Arguments supporting this statement will be discussed throughout the remainder of this proposal.
+
+\end{document}
+
